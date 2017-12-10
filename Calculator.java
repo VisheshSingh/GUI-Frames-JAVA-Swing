@@ -101,6 +101,19 @@ public class Calculator {
 		frame.getContentPane().add(subtract);
 		
 		JButton multiply = new JButton("*");
+		multiply.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int number1, number2, res;
+				try {
+					number1 = Integer.parseInt(num1.getText());
+					number2 = Integer.parseInt(num2.getText());
+					res = number1 * number2;
+					result.setText(Integer.toString(res));
+				} catch(Exception e1) {
+					JOptionPane.showMessageDialog(null, "Enter a valid number!");
+				}
+			}
+		});
 		multiply.setBounds(215, 54, 57, 30);
 		frame.getContentPane().add(multiply);
 		
